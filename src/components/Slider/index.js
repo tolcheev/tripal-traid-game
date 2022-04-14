@@ -1,4 +1,3 @@
-
 import s from './Slider.module.css'
 
 const Slider = () => {
