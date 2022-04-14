@@ -9,7 +9,7 @@ const Slider = () => {
           <h1 className={s.header}>Wow</h1>
           <h2 className={s.subheader}>Wow.Wow.Wow</h2>
           <div className={s.call}>
-            <button class="button">Wow</button>
+            <button className={s.button}>Wow</button>
           </div>
         </div>
       </div>
