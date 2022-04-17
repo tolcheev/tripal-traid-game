@@ -1,0 +1,44 @@
+.root {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+
+.colorBlack {
+    color: #000;
+}
+
+.level1 {
+    margin-bottom: 0.5em;
+    font-weight: 600;
+    font-size: 38px;
+    line-height: 1.23;
+}
+
+.level2 {
+    margin-bottom: 0.5em;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 1.35;
+}
+
+.level3 {
+    margin-bottom: 0.5em;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.35;
+}
+
+.level4 {
+    margin-bottom: 0.5em;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+.level5 {
+    margin-bottom: 0.5em;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+}
