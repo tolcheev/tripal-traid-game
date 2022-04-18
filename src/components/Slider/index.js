@@ -1,7 +1,7 @@
 import Container from '../Container';
 import Heading from '../Heading';
 import Text from "../Text";
-import s from './Slider.module.css';
+import s from './Slider.module.scss';
 
 const Slider = () => {
     return (
@@ -10,11 +10,11 @@ const Slider = () => {
                 <Container className={s.sliderContent}>
 
                     <Heading level={1}>
-                        This is first Header, baby
+                        Marvel Cards
                     </Heading>
 
-                    <Heading level={2} black>
-                        This is second Header, damn >3
+                    <Heading level={2}>
+                        Collect your best five
                     </Heading>
 
                     <Text element={'div'} italic>

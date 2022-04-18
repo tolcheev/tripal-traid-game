@@ -1,4 +1,4 @@
-import s from './Header.module.css'
+import s from './Header.module.scss'
 import Container from '../Container';
 import logoPng from "../../assets/logo.png";
 

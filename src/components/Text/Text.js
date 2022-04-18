@@ -1,4 +1,4 @@
-import s from './Text.module.css';
+import s from './Text.module.scss';
 import PropTypes from 'prop-types';
 import React from "react";
 import classNames from "classnames";
