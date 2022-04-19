@@ -16,15 +16,17 @@ const Heading = ({
             className,
             s[`level${level}`],
             {
-            [s.colorBlack]: black
+            [s.colorBlack]: black,
+                [s.backline]: backline
         },
-            [s.backline]: backline)
+            )
     }, children)
 }
 
 Heading.defaultProps = {
     level: 1,
     black: false,
+    backline: false,
 }
 
 Heading.propTypes = {
