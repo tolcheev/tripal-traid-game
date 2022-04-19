@@ -4,11 +4,15 @@ import React from "react";
 import classNames from "classnames";
 
 const Text = ({
-    element, children, strong, italic, disabled
+                  element, children, strong, italic, disabled
               }) => {
     const el = `${element}`
     return React.createElement(el, {
-        className: classNames(s.root, {[s.strong]: strong}, {[s.italic]: italic}, {[s.disabled]: disabled})
+        className: classNames(s.root, {
+            [s.strong]: strong,
+            [s.italic]: italic,
+            [s.disabled]: disabled
+        })
     }, children);
 };
 

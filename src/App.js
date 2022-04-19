@@ -2,16 +2,14 @@ import "./App.module.scss";
 import Header from "./components/Header";
 import Slider from "./components/Slider";
 import Footer from "./components/Footer";
-import Text from "./components/Text";
+import TextExamples from "./components/TextExamples";
 
 function App() {
   return (
     <div className="App">
       <Header />
       <Slider />
-        <Text element={'div'}>
-            Тестовый текст блок
-        </Text>
+        <TextExamples />
       <Footer />
     </div>
   );

@@ -12,7 +12,10 @@ const Header = () => {
                     <img src={logoPng} alt="Logo" className={s.logo}/>
 
                     <ul className={s.nav}>
-                        {MENU.map(menu => <li><a href="#">{menu}</a></li>)}
+                        {MENU.map(item =>
+                            <li key={item}>
+                                <a href="#">{item}</a>
+                            </li>)}
                     </ul>
                 </Container>
             </div>
