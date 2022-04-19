@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import Container from "../Container";
-import s from '../Container/Container.module.css';
+import s from "./TextExamples.module.css";
 import Text from "../Text";
 
 const TextExamples = () => {
