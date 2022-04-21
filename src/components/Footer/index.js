@@ -8,11 +8,8 @@ const Footer = () => {
         <div className={s.footerWrap}>
           Coded with
           <span className={s.heart}></span>
-          by Tolcheev
+          by You
         </div>
-        <span className={s.footerR}>
-            ® it-course.online
-        </span>
         </Container>
     </footer>
   )

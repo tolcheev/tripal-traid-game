@@ -1,12 +1,11 @@
 import PropTypes from "prop-types";
 import Container from "../Container";
-import Text from "../Text";
 import s from "./TextExamples.module.css";
+import Text from "../Text";
 
 const TextExamples = () => {
     return (
         <Container className={s.sliderContent}>
-
             <Text element={'div'}>
                 дивный контейнер
             </Text>
@@ -18,7 +17,6 @@ const TextExamples = () => {
             <Text element={'span'}>
                 Спан падаван
             </Text>
-
         </Container>
     )
 }
