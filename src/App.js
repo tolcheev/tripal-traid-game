@@ -72,61 +72,56 @@ const CHARACTER = [
     }
 ];
 
-
 function App() {
     const [character, setCharacter] = useState(CHARACTER);
 
     const handleLikeClick = (id) => {
-        console.log('нажал на лайк, id = ', id)
-
-        const addLike = character.find (
+        const addLike = character.find(
             (character) => character.id === id
         );
-        console.log(addLike);
         const updChar = {...addLike, isLike: !addLike.isLike}
         const updChars = character.map((prevChar) => prevChar.id === id ? updChar : prevChar)
-
         setCharacter(updChars)
-
-    return (
-        <div className="App">
-            <Header/>
-            <Slider/>
-            <section className={s.cardSection}>
-                <Container>
-                    <div className={s.cardTitle}>
-                        <Heading backline black>
-                            Marvel Cards
-                        </Heading>
-                        <Heading level={2} black>
-                            Collect your best five 🖐
-                        </Heading>
-                        <TextExamples/>
-                    </div>
-                    <div className={s.cardWrap}>
-                        {
-                            character.map((item) => {
-                                return (
-                                    <div key={item.id}>
-                                        <CharacterCard
-                                            id={item.id}
-                                            name={item.name}
-                                            src={item.thumbnail.path}
-                                            description={item.description}
-                                            humanName={item.humanName}
-                                            isLike={item.isLike}
-                                            onLikeClick={handleLikeClick}
-                                        />
-                                    </div>
-                                )
-                            })
-                        }
-                    </div>
-                </Container>
-            </section>
-            <Footer/>
-        </div>
-    );
+    }
+        return (
+            <div className="App">
+                <Header/>
+                <Slider/>
+                <section className={s.cardSection}>
+                    <Container>
+                        <div className={s.cardTitle}>
+                            <Heading backline black>
+                                Marvel Cards
+                            </Heading>
+                            <Heading level={2} black>
+                                Collect your best five 🖐
+                            </Heading>
+                            <TextExamples/>
+                        </div>
+                        <div className={s.cardWrap}>
+                            {
+                                character.map((item) => {
+                                    return (
+                                        <div key={item.id}>
+                                            <CharacterCard
+                                                id={item.id}
+                                                name={item.name}
+                                                src={item.thumbnail.path}
+                                                description={item.description}
+                                                humanName={item.humanName}
+                                                isLike={item.isLike}
+                                                onLikeClick={handleLikeClick}
+                                            />
+                                        </div>
+                                    )
+                                })
+                            }
+                        </div>
+                    </Container>
+                </section>
+                <Footer/>
+            </div>
+        );
 }
 
 export default App;
