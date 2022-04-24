@@ -8,7 +8,6 @@ import Container from "./components/Container";
 import Heading from "./components/Heading";
 import CharacterCard from "./components/CharacterCard";
 import {useState} from "react";
-import {func} from "prop-types";
 
 const CHARACTER = [
     {
@@ -80,12 +79,6 @@ function App() {
     const handleLikeClick = (id) => {
         console.log('нажал на лайк, id = ', id)
 
-        // const setCharacter = CHARACTER.map((character) => {
-        //     character.find(character.id === id)
-        //     return setCharacter
-        //     }
-        // );
-
         const addLike = character.find (
             (character) => character.id === id
         );
@@ -94,37 +87,6 @@ function App() {
         const updChars = character.map((prevChar) => prevChar.id === id ? updChar : prevChar)
 
         setCharacter(updChars)
-
-        // isLiked.isLike = !isLiked.isLike;
-        // setCharacter([...character])
-        // console.log(setCharacter)
-
-       //
-       //
-       // function setActive((setCharacter.isLike) {
-       //      return !setCharacter.isLike
-       //  }
-
-            // function changeLike (setCharacter) {
-            //     setCharacter((setCharacter.isLike) => {
-            //         return !setCharacter.isLike
-            //     }
-            // }
-            // changeLike()
-
-        // (setCharacter) => {
-        //     setCharacter((setCharacter.isLike) => {
-        //         return !setCharacter.isLike
-        //     });
-        //     return  changeLike()
-        // }
-    }
-
-    // const handleClick = () => {
-    //     setActive((prevState) => {
-    //         return !prevState
-    //     })
-    // }
 
     return (
         <div className="App">
