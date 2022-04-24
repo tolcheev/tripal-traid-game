@@ -76,12 +76,11 @@ function App() {
     const [character, setCharacter] = useState(CHARACTER);
 
     const handleLikeClick = (id) => {
-        const addLike = character.find(
-            (character) => character.id === id
-        );
-        const updChar = {...addLike, isLike: !addLike.isLike}
-        const updChars = character.map((prevChar) => prevChar.id === id ? updChar : prevChar)
-        setCharacter(updChars)
+
+        setCharacter((character => {
+            return character.map((prevChar) => prevChar.id === id ? {...prevChar, isLike: !character.isLike} : prevChar)
+        }))
+
     }
         return (
             <div className="App">
