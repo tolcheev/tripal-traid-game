@@ -78,7 +78,7 @@ function App() {
     const handleLikeClick = (id) => {
 
         setCharacter((character => {
-            return character.map((prevChar) => prevChar.id === id ? {...prevChar, isLike: !character.isLike} : prevChar)
+            return character.map((prevChar) => prevChar.id === id ? {...prevChar, isLike: !prevChar.isLike} : prevChar)
         }))
 
     }
