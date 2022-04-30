@@ -14,6 +14,16 @@
         align-items: center;
         color: #ffffff;
     }
+
+.footerR {
+  display: flex;
+  justify-content: center;
+  margin-top: 5pt;
+  margin-bottom: 5pt;
+  &:hover {
+    color: red;
+  }
+}
     
 .heart {
         display: inline-block;
