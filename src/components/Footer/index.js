@@ -1,5 +1,5 @@
 import Container from '../Container';
-import s from './Footer.module.css'
+import s from './Footer.module.scss'
 
 const Footer = () => {
   return (
@@ -8,8 +8,11 @@ const Footer = () => {
         <div className={s.footerWrap}>
           Coded with
           <span className={s.heart}></span>
-          by You
+          by Tolcheev
         </div>
+        <span className={s.footerR}>
+            ® it-course.online
+        </span>
         </Container>
     </footer>
   )
