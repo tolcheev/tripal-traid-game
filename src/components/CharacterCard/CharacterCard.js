@@ -22,7 +22,6 @@ const CharacterCard = ({
 
     const handleReadBioClick = () => {
         onReadBio && onReadBio(id)
-        console.log('her')
     }
 
     return (
@@ -50,8 +49,8 @@ const CharacterCard = ({
                     </div>
                 </div>
 
-                <div onClick={handleReadBioClick}>
-                    <a href='#' >Read bio</a>
+                <div className={s.readBio} >
+                    <a href='#' onClick={handleReadBioClick} >Read bio</a>
                 </div>
 
             </div>

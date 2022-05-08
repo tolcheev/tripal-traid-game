@@ -9,19 +9,13 @@ import Heading from "./components/Heading";
 import CharacterCard from "./components/CharacterCard";
 import {useState} from "react";
 import Biography from "./pages/Biography";
-import { CHARACTERS} from "./assets/CHARACTERS";
+import {CHARACTERS} from "./constants/CHARACTERS";
 
 function App() {
     const [characters, setCharacters] = useState(CHARACTERS);
-
-    // const handleLikeClick = (id) => {
-    //     setCharacters((character => {
-    //         return character.map((prevChar) => prevChar.id === id ? {...prevChar, isLike: !prevChar.isLike} : prevChar)
-    //     }))
-    // }
+    const [characterId, setCharacterId] = useState(null);
 
     const handleLikeClick = (id) => {
-
         setCharacters((prevState) => prevState.map(item => {
             if (id === item.id) {
                 return Object({
@@ -31,49 +25,57 @@ function App() {
             }
             return item
         }))
+    };
+
+    const handleReadBioClick = (id) => {
+        setCharacterId(id)
     }
 
-        return (
-            <div className="App">
-                <Header/>
-                <Slider/>
-                <section className={s.cardSection}>
-                    <Container>
-                        <div className={s.cardTitle}>
-                            <Heading backline black>
-                                Marvel Cards
-                            </Heading>
-                            <Biography/>
 
-                            <Heading level={2} black>
-                                Collect your best five 🖐
-                            </Heading>
-                            <TextExamples/>
-                        </div>
-                        <div className={s.cardWrap}>
-                            {
-                                characters.map((item) => {
-                                    return (
-                                        <div key={item.id}>
-                                            <CharacterCard
-                                                id={item.id}
-                                                name={item.name}
-                                                src={item.thumbnail.path}
-                                                description={item.description}
-                                                humanName={item.humanName}
-                                                isLike={item.isLike}
-                                                onLikeClick={handleLikeClick}
-                                            />
-                                        </div>
-                                    )
-                                })
-                            }
-                        </div>
-                    </Container>
-                </section>
-                <Footer/>
-            </div>
-        );
+    return (
+        <>
+            <Header/>
+            <Slider/>
+            {
+                characterId !== null ?
+                    <Biography id = {characterId} /> : (
+                        <section className={s.cardSection}>
+                            <Container>
+                                <div className={s.cardTitle}>
+                                    <Heading backline black>
+                                        Marvel Cards
+                                    </Heading>
+                                    <Heading level={2} black>
+                                        Collect your best five 🖐
+                                    </Heading>
+                                    <TextExamples/>
+                                </div>
+                                <div className={s.cardWrap}>
+                                    {
+                                        characters.map((item) => {
+                                            return (
+                                                <div key={item.id}>
+                                                    <CharacterCard
+                                                        id={item.id}
+                                                        name={item.name}
+                                                        src={item.thumbnail.path}
+                                                        description={item.description}
+                                                        humanName={item.humanName}
+                                                        isLike={item.isLike}
+                                                        onLikeClick={handleLikeClick}
+                                                        onReadBio={handleReadBioClick}
+                                                    />
+                                                </div>
+                                            )
+                                        })
+                                    }
+                                </div>
+                            </Container>
+                        </section>
+                    )}
+            <Footer />
+        </>
+    );
 }
 
 export default App;
