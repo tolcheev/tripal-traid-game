@@ -2,27 +2,47 @@ import {useState} from "react";
 import Container from '../Container';
 import Heading from '../Heading';
 import s from './Slider.module.scss';
+import Button from "../Button";
+
+function Greeting() {
+    return (
+        <div>
+            <center>
+                Приветствуем
+            </center>
+        </div>
+    )
+}
 
 const Slider = () => {
-    const [value, setValue] = useState(1);
+    const [isShow, setShow] = useState(true)
     const handleClick = () => {
-        const val = value +1;
-       setValue(val);
+        setShow(prevState => !prevState)
     }
 
-    return (
-        <section className={s.section}>
-            <div className={s.slider}>
-                <Container className={s.sliderContent}>
-                    <Heading level={1}> Marvel Cards </Heading>
-                    <Heading level={2}> {value} </Heading>
-                    <div className={s.call}>
-                        <button className={s.button} onClick={handleClick}>Wow</button>
+    switch (!isShow) {
+        case true:
+            return <Greeting/>
+        case false:
+            return (
+                <section className={s.section}>
+                    <div className={s.slider}>
+                        <Container className={s.sliderContent}>
+                            <Heading level={1}> Marvel Cards </Heading>
+                            <Heading level={2}>
+                            </Heading>
+                            <div className={s.call}>
+                                <Button onClick={handleClick}>
+                                    waw
+                                </Button>
+                            </div>
+                            <Button onClick={handleClick} isBlack={true}>
+                                not waw
+                            </Button>
+                        </Container>
                     </div>
-                </Container>
-            </div>
-        </section>
-    )
+                </section>)
+    }
 }
 
 export default Slider;

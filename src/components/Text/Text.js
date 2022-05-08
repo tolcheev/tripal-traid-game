@@ -17,7 +17,7 @@ const Text = ({
 };
 
 Text.propTypes = {
-    element: PropTypes.oneOf(['div', 'p', 'span']).isRequired,
+    element: PropTypes.oneOf(['div', 'p', 'span']),
     children: PropTypes.node,
     className: PropTypes.string,
     strong: PropTypes.bool,
