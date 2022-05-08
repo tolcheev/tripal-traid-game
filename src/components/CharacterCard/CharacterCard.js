@@ -1,4 +1,3 @@
-import {useState} from "react";
 import {ReactComponent as Like} from "./assets/heart.svg";
 import PropTypes from "prop-types";
 import Heading from "../Heading";
@@ -15,10 +14,17 @@ const CharacterCard = ({
                            description,
                            isLike,
                            onLikeClick,
+                           onReadBio
                        }) => {
     const handleClick = () => {
-        onLikeClick(id)
+        onLikeClick && onLikeClick(id)
     }
+
+    const handleReadBioClick = () => {
+        onReadBio && onReadBio(id)
+        console.log('her')
+    }
+
     return (
         <div className={s.root}>
             <img src={src} alt={name} className={s.cardImage}/>
@@ -44,8 +50,8 @@ const CharacterCard = ({
                     </div>
                 </div>
 
-                <div className={s.readBio}>
-                    <a href='#'>Read bio</a>
+                <div onClick={handleReadBioClick}>
+                    <a href='#' >Read bio</a>
                 </div>
 
             </div>
@@ -65,6 +71,7 @@ CharacterCard.propTypes = {
     humanName: PropTypes.string,
     isLike: PropTypes.bool,
     onLikeClick: PropTypes.func,
+    onReadBio: PropTypes.func,
 }
 
 export default CharacterCard;
